@@ -39,7 +39,7 @@ $table->unsignedInteger('id_barang')->nullable();
             $table->string('ruangan', 30)->nullable();
             $table->string('no_wa', 20)->nullable();
 
-            // NO timestamps karena $timestamps = false
+            $table->timestamps();
         });
     }
 

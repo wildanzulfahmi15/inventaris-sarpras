@@ -35,7 +35,7 @@ public function dashboard()
         ->count();
 
     // 3️⃣ Barang sedang dipinjam
-    $barangDipinjam = DetailPeminjaman::where('status_peminjaman', 'DisetujuI')
+    $barangDipinjam = DetailPeminjaman::where('status_peminjaman', 'Disetujui')
         ->where('status_pengembalian', '!=', 'Selesai')
         ->whereHas('peminjaman', function($q) use ($guruId) {
             $q->where('id_guru', $guruId);

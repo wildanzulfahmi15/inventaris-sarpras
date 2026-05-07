@@ -448,7 +448,9 @@ if ($request->foto_guru) {
     );
 }
     DB::beginTransaction();
+    
     try {
+        
         // 1) Buat header peminjaman
 $peminjaman = Peminjaman::create([
     'id_siswa' => $siswa->id_siswa,

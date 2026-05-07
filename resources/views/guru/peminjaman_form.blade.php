@@ -272,6 +272,7 @@
         
         <div class="grid">
           <div class="card">
+            
             <form id="formPeminjaman" method="POST" action="{{ route('peminjaman.store') }}">
               @csrf
               
@@ -797,11 +798,7 @@ if (!tempatIdInput.value) {
   return;
 }
 
-document.addEventListener('click', e => {
-  if (!mapelInput.parentElement.contains(e.target)) {
-    mapelDropdown.style.display = 'none';
-  }
-});
+
 
 
   // ❌ mapel wajib dari database
@@ -841,7 +838,9 @@ document.addEventListener('click', e => {
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Mengirim...';
-
+console.log('tempat id =', tempatIdInput.value);
+console.log('mapel =', idMapelInput.value);
+console.log([...new FormData(form).entries()]);
       form.submit();
     };
 

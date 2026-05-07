@@ -201,7 +201,7 @@
                             <div class="action-btns">
                                 <button
                                     class="btn btn-sm btn-warning btn-edit"
-                                    data-id="{{ $t->id }}"
+                                    data-id="{{ $t->id_tempat }}"
                                     data-nama="{{ $t->nama }}"
                                     data-kategori="{{ $t->kategori }}"
                                     data-aktif="{{ $t->aktif }}"

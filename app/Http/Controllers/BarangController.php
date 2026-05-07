@@ -42,13 +42,13 @@ public function index(Request $request)
 
     $totalTersedia = Barang::all()->sum(fn ($b) => $b->stok_tersedia);
 
-    $habis = Barang::whereRaw('(stok - (
+    $habis = Barang::whereRaw("(stok - (
         SELECT COALESCE(SUM(jumlah),0)
         FROM detail_peminjaman
         WHERE detail_peminjaman.id_barang = barang.id_barang
-        AND status_peminjaman = "Disetujui"
-        AND status_pengembalian != "Selesai"
-    )) <= 0')->count();
+        AND status_peminjaman = 'Disetujui'
+        AND status_pengembalian != 'Selesai'
+    )) <= 0")->count();
 
     return view('sarpras.barang.index', compact(
         'barang',
