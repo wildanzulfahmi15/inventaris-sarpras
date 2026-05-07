@@ -15,6 +15,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
-        "firebase": "^12.12.1"
+        "firebase": "^12.12.1",
+        "vercel-php": "^0.9.0"
     }
 }
